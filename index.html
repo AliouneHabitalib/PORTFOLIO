@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio - Alioune Habitalib COULIBALY</title>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- CSS -->
+  <style>
+    /* =========================
+       RESET & BASE
+    ========================= */
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Arial', sans-serif; }
+    body { line-height: 1.6; color: #333; background-color: #f9f9f9; }
+    a { text-decoration: none; }
+
+    /* =========================
+       HEADER & NAV
+    ========================= */
+    header { background-color: #1f2937; color: #fff; padding: 1rem 0; position: sticky; top: 0; z-index: 100; }
+    nav ul { display: flex; justify-content: center; list-style: none; gap: 2rem; }
+    nav ul li a { color: #fff; font-weight: bold; transition: color 0.3s; }
+    nav ul li a:hover, nav ul li a.active { color: #fbbf24; }
+
+    /* =========================
+       SECTIONS
+    ========================= */
+    section { padding: 4rem 2rem; max-width: 1200px; margin: 0 auto; opacity: 0; transform: translateY(50px); transition: all 0.8s ease-out; }
+    section.active { opacity: 1; transform: translateY(0); }
+
+    /* =========================
+       ACCUEIL
+    ========================= */
+    #accueil { text-align: center; background: linear-gradient(to bottom, #fbbf24, #fef3c7); padding: 6rem 2rem; }
+    .profile-pic { width: 150px; height: 150px; border-radius: 50%; object-fit: cover; margin-bottom: 1rem; border: 4px solid #fff; }
+    #accueil h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+    #accueil h2 { font-size: 1.5rem; margin-bottom: 1rem; color: #555; }
+    #accueil p { font-size: 1.1rem; }
+
+    /* =========================
+       A PROPOS
+    ========================= */
+    #apropos { background-color: #fff; text-align: center; }
+    #apropos h2 { margin-bottom: 2rem; color: #1f2937; }
+
+    /* =========================
+       COMPETENCES
+    ========================= */
+    .skills-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; }
+    .skill p { font-weight: bold; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem; }
+    .progress-bar { background-color: #e5e7eb; border-radius: 10px; overflow: hidden; }
+    .progress { height: 20px; background-color: #fbbf24; width: 0; text-align: right; padding-right: 0.5rem; line-height: 20px; color: #fff; font-weight: bold; border-radius: 10px; transition: width 1.5s ease-in-out; }
+
+    /* =========================
+       PROJETS
+    ========================= */
+    .project-card { background-color: #fff; padding: 1rem; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); margin-bottom: 2rem; text-align: center; transition: transform 0.3s; }
+    .project-card:hover { transform: translateY(-5px); }
+    .project-card img { width: 100%; max-height: 200px; object-fit: cover; border-radius: 10px; margin-bottom: 1rem; }
+    .project-card h3 { margin-bottom: 0.5rem; }
+
+    /* =========================
+       LOISIRS
+    ========================= */
+    .loisirs-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; }
+    .loisir-card { background-color: #fff; padding: 1rem; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); width: 120px; text-align: center; transition: transform 0.3s; }
+    .loisir-card:hover { transform: translateY(-5px); }
+    .loisir-icon { font-size: 2rem; margin-bottom: 0.5rem; }
+
+    /* =========================
+       CONTACT
+    ========================= */
+    #contact form { display: flex; flex-direction: column; gap: 1rem; max-width: 500px; margin: 0 auto; }
+    #contact input, #contact textarea { padding: 0.8rem; border: 1px solid #ccc; border-radius: 8px; width: 100%; resize: vertical; }
+    #contact button { padding: 0.8rem; background-color: #fbbf24; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; transition: background 0.3s; }
+    #contact button:hover { background-color: #f59e0b; }
+
+    /* =========================
+       FOOTER
+    ========================= */
+    footer { text-align: center; padding: 2rem; background-color: #1f2937; color: #fff; }
+
+    /* =========================
+       RESPONSIVE
+    ========================= */
+    @media (max-width: 768px) {
+      nav ul { flex-direction: column; gap: 1rem; }
+      .skills-container { grid-template-columns: 1fr; }
+      .loisirs-container { gap: 0.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#accueil" class="active">Accueil</a></li>
+        <li><a href="#apropos">À propos</a></li>
+        <li><a href="#competences">Compétences</a></li>
+        <li><a href="#projets">Projets</a></li>
+        <li><a href="#loisirs">Loisirs</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Accueil -->
+    <section id="accueil">
+      <img src="images/photo.jpg" alt="Photo de profil" class="profile-pic">
+      <h1>Alioune Habitalib COULIBALY</h1>
+      <h2>Community Manager</h2>
+      <p>Passionné par le digital, le community management et la création de contenu engageant.</p>
+    </section>
+
+    <!-- À propos -->
+    <section id="apropos">
+      <h2>À propos de moi</h2>
+      <p>Community Manager passionné et polyvalent, expert en gestion des réseaux sociaux, création de contenu engageant et gestion de projets. Expérimenté dans l’élaboration de stratégies digitales pour améliorer la visibilité des marques.</p>
+    </section>
+
+    <!-- Compétences -->
+    <section id="competences">
+      <h2>Mes Compétences</h2>
+      <div class="skills-container">
+        <div class="skill"><p><i class="fa-brands fa-facebook"></i> Gestion des réseaux sociaux</p>
+          <div class="progress-bar"><div class="progress" data-width="95%">95%</div></div></div>
+
+        <div class="skill"><p><i class="fa-solid fa-bullhorn"></i> Publicité digitale</p>
+          <div class="progress-bar"><div class="progress" data-width="92%">92%</div></div></div>
+
+        <div class="skill"><p><i class="fa-solid fa-chart-line"></i> Référencement SEO & Analyse marketing</p>
+          <div class="progress-bar"><div class="progress" data-width="90%">90%</div></div></div>
+
+        <div class="skill"><p><i class="fa-solid fa-magnifying-glass-chart"></i> Outils de suivi & évaluation de projets</p>
+          <div class="progress-bar"><div class="progress" data-width="87%">87%</div></div></div>
+
+        <div class="skill"><p><i class="fa-solid fa-file-word"></i> Logiciels bureautiques et de gestion</p>
+          <div class="progress-bar"><div class="progress" data-width="98%">98%</div></div></div>
+
+        <div class="skill"><p><i class="fa-solid fa-palette"></i> UX Design & Création de contenus</p>
+          <div class="progress-bar"><div class="progress" data-width="89%">89%</div></div></div>
+      </div>
+    </section>
+
+    <!-- Projets -->
+    <section id="projets">
+      <h2>Mes Projets</h2>
+      <div class="project-card"><img src="images/photo1.jpg" alt="Projet 1"><h3>Visuel SGEA</h3><p>Société Générale Euro-Afrique, Société Import-Export.</p></div>
+      <div class="project-card"><img src="images/photo2.jpg" alt="Projet 2"><h3>Habgrow Impact</h3><p>Agence de Marketing Digital.</p></div>
+      <div class="project-card"><img src="images/photo3.jpg" alt="Projet 3"><h3>Community Management</h3><p>Publicité digitale pour Livraison Express.</p></div>
+    </section>
+
+    <!-- Loisirs -->
+    <section id="loisirs">
+      <h2>Loisirs & Centres d’intérêt</h2>
+      <div class="loisirs-container">
+        <div class="loisir-card"><div class="loisir-icon">✈️</div><p>Voyages</p></div>
+        <div class="loisir-card"><div class="loisir-icon">🌱</div><p>Développement durable</p></div>
+        <div class="loisir-card"><div class="loisir-icon">📚</div><p>Lecture</p></div>
+        <div class="loisir-card"><div class="loisir-icon">🎮</div><p>Jeux & Mangas</p></div>
+        <div class="loisir-card"><div class="loisir-icon">⚽</div><p>Sports</p></div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <h2>Contactez-moi</h2>
+      <form>
+        <label for="name">Nom :</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email :</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">Message :</label>
+        <textarea id="message" name="message" required></textarea>
+
+        <button type="submit">Envoyer</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Alioune Habitalib COULIBALY</p>
+  </footer>
+
+  <!-- JS Animations -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const revealElements = document.querySelectorAll("section, .skill, .project-card, .loisir-card");
+
+      const revealOnScroll = () => {
+        const windowHeight = window.innerHeight;
+        revealElements.forEach(el => {
+          const elementTop = el.getBoundingClientRect().top;
+          if(elementTop < windowHeight - 100){
+            el.classList.add("active");
+            // Progress bars animation
+            const progress = el.querySelectorAll('.progress');
+            progress.forEach(bar => {
+              bar.style.width = bar.getAttribute('data-width');
+            });
+          }
+        });
+      };
+
+      window.addEventListener("scroll", revealOnScroll);
+      revealOnScroll();
+    });
+  </script>
+</body>
+</html>
